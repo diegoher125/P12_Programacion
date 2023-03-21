@@ -37,6 +37,14 @@ public class Tablero {
 	public void setJugadores(ArrayList<Jugador> jugadores) {
 		this.jugadores = jugadores;
 	}
+	
+	public void crearBaraja() {
+		for(Palo palo: Palo.values()) {
+			for(Numero numero: Numero.values()) {
+				mazo.add(new Carta(numero, palo));
+			}
+		}
+	}
 
 	@Override
 	public String toString() {
