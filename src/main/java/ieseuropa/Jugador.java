@@ -28,7 +28,7 @@ public class Jugador {
 		this.cartas = cartas;
 	}
 	
-	public void anadirCarta(Carta carta) {
+	public void addCarta(Carta carta) {
 		cartas.add(carta);
 	}
 
