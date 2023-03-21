@@ -37,6 +37,17 @@ public class Tablero {
 	public void setJugadores(ArrayList<Jugador> jugadores) {
 		this.jugadores = jugadores;
 	}
+	
+	public void repartirMazo() {
+		while(!mazo.isEmpty()) {
+			int numJ = 0;
+			while(numJ < jugadores.size()) {
+				jugadores.get(numJ).anadirCarta(mazo.get(0));
+				mazo.remove(0);
+				numJ++;
+			}
+		}
+	}
 
 	@Override
 	public String toString() {
