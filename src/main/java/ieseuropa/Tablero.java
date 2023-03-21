@@ -37,7 +37,17 @@ public class Tablero {
 	public void setJugadores(ArrayList<Jugador> jugadores) {
 		this.jugadores = jugadores;
 	}
-
+	
+	public void barajarMazo() {
+		ArrayList<Carta> mazoBarajado = new ArrayList<>();
+		while(!mazo.isEmpty()) {
+			int aleatorio = (int) (Math.random()*mazo.size());
+			mazoBarajado.add(mazo.get(aleatorio));
+			mazo.remove(mazo.get(aleatorio));
+		}
+		mazo = mazoBarajado;
+	}
+	
 	@Override
 	public String toString() {
 		return "Tablero [tablero=" + tablero + ", mazo=" + mazo + ", jugadores=" + jugadores + "]";
