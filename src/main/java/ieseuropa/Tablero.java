@@ -37,6 +37,7 @@ public class Tablero {
 	public void setJugadores(ArrayList<Jugador> jugadores) {
 		this.jugadores = jugadores;
 	}
+  
   public void crearBaraja() {
 		for(Palo palo: Palo.values()) {
 			for(Numero numero: Numero.values()) {
@@ -44,6 +45,7 @@ public class Tablero {
 			}
 		}
 	}
+  
   public void barajarMazo() {
 		ArrayList<Carta> mazoBarajado = new ArrayList<>();
 		while(!mazo.isEmpty()) {
@@ -53,6 +55,18 @@ public class Tablero {
 		}
 		mazo = mazoBarajado;
 	}
+  
+  public void repartirMazo() {
+		while(!mazo.isEmpty()) {
+			int numJ = 0;
+			while(numJ < jugadores.size()) {
+				jugadores.get(numJ).anadirCarta(mazo.get(0));
+				mazo.remove(0);
+				numJ++;
+			}
+		}
+	}
+  
 	@Override
 	public String toString() {
 		return "Tablero [tablero=" + tablero + ", mazo=" + mazo + ", jugadores=" + jugadores + "]";
