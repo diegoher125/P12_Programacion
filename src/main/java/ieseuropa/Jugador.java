@@ -27,6 +27,10 @@ public class Jugador {
 	public void setCartas(ArrayList<Carta> cartas) {
 		this.cartas = cartas;
 	}
+	
+	public void addCarta(Carta carta) {
+		cartas.add(carta);
+	}
 
 	@Override
 	public String toString() {
