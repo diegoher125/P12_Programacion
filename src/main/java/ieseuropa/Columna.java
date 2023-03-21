@@ -28,6 +28,10 @@ public class Columna {
 		this.palo = palo;
 	}
 	
+	public void addCarta(Carta carta) {
+		cartas.add(carta);
+	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if (palo == ((Columna) o).palo) {
