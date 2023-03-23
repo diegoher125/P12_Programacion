@@ -5,7 +5,6 @@ public class Carta implements Comparable<Carta> {
 	private Numero numero;
 	private Palo palo;
 	private int id;
-
 	public Carta(Palo palo) {
 		this.palo = palo;
 	}

@@ -7,7 +7,6 @@ public class Tablero {
 	private ArrayList<Columna> tablero;
 	private ArrayList<Carta> mazo;
 	private ArrayList<Jugador> jugadores;
-
 	public Tablero() {
 		tablero = new ArrayList<>();
 		mazo = new ArrayList<>();

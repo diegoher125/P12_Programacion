@@ -6,7 +6,6 @@ public class Jugador {
 	
 	private String nombre;
 	private ArrayList<Carta> baraja;
-
 	public Jugador(String nombre) {
 		this.nombre = nombre;
 		this.baraja = new ArrayList<>();

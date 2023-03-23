@@ -53,8 +53,6 @@ public class Start {
 			jugador2.getBaraja().add(new Carta(Numero.Cinco, Palo.oros));
 			jugador2.getBaraja().add(new Carta(Numero.Cinco, Palo.bastos));
 			jugador2.getBaraja().add(new Carta(Numero.Seis, Palo.bastos));
-
-			
 			
 			
 			

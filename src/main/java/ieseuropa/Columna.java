@@ -6,7 +6,6 @@ public class Columna {
 	
 	private ArrayList<Carta> cartas;
 	private Palo palo;
-	
 	public Columna() {
 		cartas = new ArrayList<>();
 		palo = null;
