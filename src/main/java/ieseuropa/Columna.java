@@ -11,6 +11,12 @@ public class Columna {
 		cartas = new ArrayList<>();
 		palo = null;
 	}
+	
+	public Columna(ArrayList<Carta> cartas, Palo palo) {
+		super();
+		this.cartas = cartas;
+		this.palo = palo;
+	}
 
 	public ArrayList<Carta> getCartas() {
 		return cartas;

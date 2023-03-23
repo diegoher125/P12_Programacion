@@ -6,6 +6,10 @@ public class Carta implements Comparable<Carta> {
 	private Palo palo;
 	private int id;
 
+	public Carta(Palo palo) {
+		this.palo = palo;
+	}
+	
 	public Carta(Numero numero, Palo palo) {
 		this.numero = numero;
 		this.palo = palo;

@@ -18,10 +18,6 @@ public class Tablero {
 		return tablero;
 	}
 
-	public void setTablero(ArrayList<Columna> tablero) {
-		this.tablero = tablero;
-	}
-
 	public ArrayList<Carta> getMazo() {
 		return mazo;
 	}
@@ -66,10 +62,27 @@ public class Tablero {
 			}
 		}
 	}
+	
+	public ArrayList<Columna> crearColumnas() {
+		for(Palo palo: Palo.values()) {
+			tablero.add(new Columna(new ArrayList<>(), palo));
+		}
+		return tablero;
+	}
+	
+	public Carta buscarOros(Carta carta) {
+		for(Palo palo : Palo.values()) {
+			for(Numero n: Numero.values()) {
+				if(carta.equals(new Carta(n, palo))) {
+					return new Carta(n, palo);
+				}
+			}
+		}	
+		return new Carta(null, null);
+	}
 
 	@Override
 	public String toString() {
 		return "Tablero [tablero=" + tablero + ", mazo=" + mazo + ", jugadores=" + jugadores + "]";
 	}
-
 }

@@ -5,11 +5,17 @@ import java.util.ArrayList;
 public class Jugador {
 	
 	private String nombre;
-	private ArrayList<Carta> cartas;
-	
+	private ArrayList<Carta> baraja;
+
 	public Jugador(String nombre) {
 		this.nombre = nombre;
-		this.cartas = new ArrayList<>();
+		this.baraja = new ArrayList<>();
+	}
+	
+	public Jugador(String nombre, ArrayList<Carta> baraja) {
+
+		this.nombre = nombre;
+		this.baraja = baraja;
 	}
 
 	public String getNombre() {
@@ -20,21 +26,21 @@ public class Jugador {
 		this.nombre = nombre;
 	}
 
-	public ArrayList<Carta> getCartas() {
-		return cartas;
+	public ArrayList<Carta> getBaraja() {
+		return baraja;
 	}
 
-	public void setCartas(ArrayList<Carta> cartas) {
-		this.cartas = cartas;
+	public void setBaraja(ArrayList<Carta> baraja) {
+		this.baraja = baraja;
+	}
+
+	public void addCarta(Carta carta) {
+		baraja.add(carta);
 	}
 	
-	public void addCarta(Carta carta) {
-		cartas.add(carta);
-	}
-
 	@Override
 	public String toString() {
-		return "Jugador [nombre=" + nombre + ", cartas=" + cartas + "]";
+		return "Jugador [nombre=" + nombre + ", baraja=" + baraja + "]";
 	}
 
 }
