@@ -7,9 +7,11 @@ public class Columna {
 	private ArrayList<Carta> cartas;
 	private Palo palo;
 	
-	public Columna() {
-		cartas = new ArrayList<>();
-		palo = null;
+
+	public Columna(ArrayList<Carta> cartas, Palo palo) {
+	
+		this.cartas = cartas;
+		this.palo = palo;
 	}
 
 	public ArrayList<Carta> getCartas() {
@@ -26,6 +28,10 @@ public class Columna {
 
 	public void setPalo(Palo palo) {
 		this.palo = palo;
+	}
+	
+	public void addCarta(Carta carta) {
+		cartas.add(carta);
 	}
 	
 	@Override
