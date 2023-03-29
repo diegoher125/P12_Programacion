@@ -66,6 +66,65 @@ public class Tablero {
 			}
 		}
 	}
+	
+	public ArrayList<Columna> crearColumnas() {
+		for(Palo palo: Palo.values()) {
+			tablero.add(new Columna(new ArrayList<>(), palo));
+		}
+		return tablero;
+	}
+	
+	public void moverCarta(int numJugador , int opcionCarta) {
+		
+		boolean encontrado = false;
+
+		for (int k = 0; k <tablero.size() && !encontrado; k++) {
+
+			if (jugadores.get(numJugador).getCartas().get(opcionCarta)
+					.equals(new Carta(Numero.Cinco, tablero.get(k).getPalo()))) {
+
+				tablero.get(k).getCartas()
+						.add(new Carta(jugadores.get(numJugador).getCartas().get(opcionCarta).getNumero(),
+								jugadores.get(numJugador).getCartas().get(opcionCarta).getPalo()));
+
+				jugadores.get(numJugador).getCartas().remove(opcionCarta);
+
+				encontrado = true;
+			}
+
+			for (int m = 0; m < tablero.get(k).getCartas().size() && !encontrado; m++) {
+
+				if (((jugadores.get(numJugador).getCartas().get(opcionCarta).getNumero()
+						.ordinal() == tablero.get(k).getCartas().get(m).getNumero().ordinal() - 1
+						&& jugadores.get(numJugador).getCartas().get(opcionCarta).getPalo() == tablero
+								.get(k).getCartas().get(m).getPalo())
+						|| jugadores.get(numJugador).getCartas().get(opcionCarta).getNumero()
+								.ordinal() == tablero.get(k).getCartas().get(m).getNumero().ordinal() + 1
+								&& jugadores.get(numJugador).getCartas().get(opcionCarta)
+										.getPalo() == tablero.get(k).getCartas().get(m).getPalo())) {
+
+					tablero.get(k).getCartas()
+							.add(new Carta(jugadores.get(numJugador).getCartas().get(opcionCarta).getNumero(),
+									jugadores.get(numJugador).getCartas().get(opcionCarta).getPalo()));
+
+					jugadores.get(numJugador).getCartas().remove(opcionCarta);
+
+					System.out.println("Si se puede hacer la jugada");
+
+					encontrado = true;
+
+				}
+
+			}
+
+		}
+		
+		
+		
+		
+		
+	}
+	
 
 	@Override
 	public String toString() {
